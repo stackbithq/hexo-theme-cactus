@@ -6,3 +6,11 @@
 yarn.lock
 package-lock.json
 node_modules/
+
+example/node_modules/
+example/Thumbs.db
+example/db.json
+example/*.log
+example/node_modules/
+example/public/
+example/.deploy*/

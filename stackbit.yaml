@@ -1,0 +1,398 @@
+stackbitVersion: ~0.2.0
+ssgName: custom
+publishDir: example/public
+buildCommand: cd example && rm -rf themes/cactus && git clone https://github.com/probberechts/hexo-theme-cactus.git themes/cactus && mv ../_config.yml themes/cactus  && npm install && npm install -g hexo && hexo generate && cd ..
+uploadDir: images
+staticDir: example/source
+pagesDir: example/source
+dataDir: ""
+models:
+  config:
+    type: data
+    label: Config
+    file: example/_config.yml
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: string
+        name: subtitle
+        label: Subtitle
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: keywords
+        label: Keywords
+      - type: string
+        name: author
+        label: Author
+      - type: string
+        name: language
+        label: Language
+      - type: string
+        name: timezone
+        label: Timezone
+      - type: string
+        name: url
+        label: Site URL
+      - type: string
+        name: root
+        label: Site Root URL
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: string
+        name: permalink_defaults
+        label: Permalink_defaults
+      - type: string
+        name: source_dir
+        label: Source Dir
+        const: source
+      - type: string
+        name: public_dir
+        label: Public Dir
+        const: public
+      - type: string
+        name: tag_dir
+        label: Tag Dir
+        const: tags
+      - type: string
+        name: archive_dir
+        label: Archive Dir
+        const: archives
+      - type: string
+        name: category_dir
+        label: Category Dir
+        const: categories
+      - type: string
+        name: code_dir
+        label: Code Dir
+        const: "downloads/code"
+      - type: string
+        name: i18n_dir
+        label: i18n Dir
+        const: ":lang"
+      - type: list
+        name: skip_render
+        label: Skip Render
+        items:
+          type: string
+      - type: string
+        name: new_post_name
+        label: New Post Name
+      - type: string
+        name: default_layout
+        label: Default Layout
+        const: post
+      - type: boolean
+        name: titlecase
+        label: Titlecase
+        description: Transform title into titlecase
+      - type: boolean
+        name: external_link
+        label: External Link
+        description: Open external links in new tab
+      - type: number
+        name: filename_case
+      - type: boolean
+        name: render_drafts
+        label: Render Drafts
+      - type: boolean
+        name: post_asset_folder
+        label: Post Asset Folder
+      - type: boolean
+        name: relative_link
+        label: Relative Link
+      - type: boolean
+        name: future
+        label: Future
+      - type: object
+        name: highlight
+        label: Highlight
+        fields: 
+          - type: boolean
+            name: enable
+            label: Enable
+          - type: boolean
+            name: line_number
+            label: Line Number
+          - type: boolean
+            name: auto_detect
+            label: Auto Detect
+          - type: string
+            name: tab_replace
+            label: Tab Replace
+      - type: object
+        name: index_generator
+        label: Home page setting
+        fields:
+          - type: string
+            name: path
+            label: Path
+          - type: number
+            name: per_page
+            label: Number of per page
+          - type: string
+            name: order_by
+            label: Order by
+      - type: string
+        name: default_category
+        label: Default Category
+      - type: string
+        name: category_map
+        label: Category Map
+      - type: string
+        name: tag_map
+        label: Tag Map
+      - type: string
+        name: date_format
+        label: Date Format
+      - type: string
+        name: time_format
+        label: Time Format
+      - type: number
+        name: per_page
+        label: Number of Per page for Pagination
+      - type: string
+        name: pagination_dir
+        label: Pagination Dir
+        const: page
+      - type: string
+        name: theme
+        label: Theme
+        const: cactus
+  themeconfig:
+    type: data
+    label: Theme Config
+    file: _config.yml
+    fields:
+      - type: string
+        name: projects_url
+        label: Project URL
+      - type: string
+        name: direction
+        label: Direction
+      - type: object
+        name: nav
+        label: Nav Menu
+        fields:
+          - type: string
+            name: home
+            label: Home
+          - type: string
+            name: about
+            label: About
+          - type: string
+            name: articles
+            label: Articles
+          - type: string
+            name: projects
+            label: Projects
+      - type: object
+        name: social_links
+        label: Social Links
+        fields:
+          - type: string
+            name: github
+            label: Github
+          - type: string
+            name: twitter
+            label: Twitter
+          - type: string
+            name: facebook
+            label: Facebook
+          - type: string
+            name: linkedin
+            label: Linkedin
+          - type: string
+            name: mail
+            label: Mail
+      - type: boolean
+        name: tags_overview
+        label: Tags Overview
+      - type: object
+        name: posts_overview
+        label: Posts Overview
+        fields:
+          - type: boolean
+            name: show_all_posts
+            label: Show all Posts
+          - type: number
+            name: post_count
+            label: Post Count
+          - type: boolean
+            name: sort_updated
+            label: Sort Updated
+      - type: object
+        name: archive
+        label: Archive
+        fields: 
+          - type: boolean
+            name: sort_updated
+            label: Sort Updated
+      - type: object
+        name: post
+        label: Post
+        fields: 
+          - type: boolean
+            name: show_updated
+            label: Show Updated
+      - type: object
+        name: logo
+        label: Logo
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enable
+          - type: number
+            name: width
+            label: Logo Width
+          - type: number
+            name: height
+            label: Logo Height
+          - type: image
+            name: url
+            label: Logo Image
+          - type: boolean
+            name: gravatar
+            label: Gravatar
+      - type: object
+        name: favicon
+        label: Favicon
+        fields:
+          - type: object
+            name: desktop
+            label: Desktop Favicon
+            fields:
+              - type: image
+                name: url
+                label: Image URL
+              - type: boolean
+                name: gravatar
+                label: Gravatar
+          - type: object
+            name: android
+            label: Android Favicon
+            fields:
+              - type: image
+                name: url
+                label: Image URL
+              - type: boolean
+                name: gravatar
+                label: Gravatar
+          - type: object
+            name: apple
+            label: Apple Favicon
+            fields:
+              - type: image
+                name: url
+                label: Image URL
+              - type: boolean
+                name: gravatar
+                label: Gravatar
+      - type: enum
+        name: colorscheme
+        label: Color Scheme
+        options: 
+          - dark
+          - light
+          - classic
+          - white
+      - type: number
+        name: page_width
+        label: Page Width
+      - type: boolean
+        name: rss
+        label: RSS
+      - type: object
+        name: open_graph
+        label: Open Graph
+        fields:
+          - type: string
+            name: fb_app_id
+            label: Facebook App id
+          - type: string
+            name: fb_admins
+            label: Facebook Admins
+          - type: string
+            name: twitter_id
+            label: Twitter id
+          - type: string
+            name: google_plus
+            label: Google +
+      - type: object
+        name: disqus
+        label: Disqus
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+          - type: string
+            name: shortname
+            label: Disqus Shortname
+      - type: object
+        name: google_analytics
+        label: Google Analytics
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+          - type: string
+            name: id
+            label: ID
+      - type: object
+        name: baidu_analytics
+        label: Baidu Analytics
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+          - type: string
+            name: id
+            label: ID
+      - type: object
+        name: gravatar
+        label: Gravatar
+        fields:
+          - type: string
+            name: email
+  post:
+    type: page
+    label: Posts
+    folder: _posts
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+  about:
+    type: page
+    label: About Page
+    file: "about/index.md"
+    singleInstance: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: date
+        name: date
+        label: Date
+  archive:
+    type: page
+    label: Post Archive Page
+    file: "archive/index.md"
+    singleInstance: true
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: date
+        name: date
+        label: Date
+
+
+

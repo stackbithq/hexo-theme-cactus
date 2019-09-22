@@ -119,10 +119,10 @@ rss: false
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
-  fb_app_id:
-  fb_admins:
-  twitter_id:
-  google_plus:
+  fb_app_id: ""
+  fb_admins: ""
+  twitter_id: ""
+  google_plus: ""
 
 
 ##############################################################################
